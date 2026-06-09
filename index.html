@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kurdish Royal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:url("https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=2000&q=80");
+  background-size:cover;
+  background-position:center;
+}
+
+/* cinematic but still visible background */
+body::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.35);
+}
+
+.container{
+  position:relative;
+  width:1000px;
+  padding:25px;
+  border-radius:25px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  box-shadow:0 0 40px rgba(0,0,0,0.5);
+}
+
+/* TOP BAR */
+.top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:20px;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+}
+
+.icons{
+  display:flex;
+  gap:12px;
+}
+
+.icon{
+  width:26px;
+  height:26px;
+  fill:white;
+  opacity:0.9;
+  cursor:pointer;
+}
+
+/* MAIN LAYOUT */
+.main{
+  display:flex;
+  gap:20px;
+}
+
+/* LEFT TIMER BIG */
+.left{
+  flex:1.3;
+  text-align:center;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.box{
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+}
+
+.number{
+  font-size:34px;
+  font-weight:700;
+}
+
+.label{
+  font-size:12px;
+  opacity:0.8;
+}
+
+.ms{
+  margin-top:12px;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  font-size:28px;
+  font-weight:700;
+}
+
+/* RIGHT DESCRIPTION */
+.right{
+  flex:1;
+  padding:18px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(12px);
+  border:1px solid rgba(255,255,255,0.15);
+  text-align:right;
+  line-height:1.8;
+  font-size:14px;
+}
+
+/* BUTTONS */
+.buttons{
+  margin-top:18px;
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+
+.btn{
+  padding:10px 14px;
+  border-radius:12px;
+  background:rgba(255,255,255,0.1);
+  border:1px solid rgba(255,255,255,0.2);
+  color:white;
+  text-decoration:none;
+}
+
+.bottom{
+  margin-top:15px;
+  text-align:center;
+  font-size:12px;
+  opacity:0.7;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- TOP -->
+  <div class="top">
+    <div class="logo">دارچونی یاری کوردیش ڕۆیاڵ</div>
+
+    <div class="icons">
+
+      <!-- Telegram -->
+      <a href="https://t.me/kurd_royall" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M9.04 15.63l-.39 5.5c.56 0 .81-.24 1.1-.52l2.64-2.52 5.47 4.01c1 .55 1.72.26 1.98-.92l3.6-16.9c.33-1.52-.55-2.11-1.52-1.75L1.67 9.94c-1.48.58-1.46 1.4-.26 1.77l5.83 1.82 13.53-8.5c.64-.4 1.22-.18.74.24"/>
+        </svg>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@kurdistan_battle_royall" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12.75 2h2.2c.2 1.7 1.3 3.2 3 4v2.3c-1.4-.1-2.7-.6-3.9-1.5v7.2c0 3.8-3.1 6.7-6.8 6.7S0.4 18 0.4 14.2s3.1-6.8 6.8-6.8c.3 0 .6 0 .9.1v2.5c-.3-.1-.6-.1-.9-.1-2.3 0-4.2 1.9-4.2 4.3s1.9 4.3 4.2 4.3 4.2-1.9 4.2-4.3V2z"/>
+        </svg>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- LEFT -->
+    <div class="left">
+      <div class="grid">
+        <div class="box"><div id="days" class="number">0</div><div class="label">ڕۆژ</div></div>
+        <div class="box"><div id="hours" class="number">0</div><div class="label">کاتژمێر</div></div>
+        <div class="box"><div id="minutes" class="number">0</div><div class="label">خولەک</div></div>
+        <div class="box"><div id="seconds" class="number">0</div><div class="label">چرکە</div></div>
+      </div>
+
+      <div class="ms" id="ms">000</div>
+
+      <div class="buttons">
+        <a class="btn" href="#">دەستپێکردن</a>
+        <a class="btn" href="#">زانیاری</a>
+      </div>
+    </div>
+
+ <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
+<div class="right">
+  ▣ کوردیش رۆیال یاریەکی ئۆنلاینە بە شێوەی Battle Royale کە تێیدا 50 یاریزان لە یەک مێدانی شەڕدا بە یەک دەبن.<br><br>
+
+  ▣ مێپەکە بریتییە لە ناوچەی کوردستان کە بە شێوەیەکی گەورە و ستراتیژی دروست کراوە.<br><br>
+
+  ▣ لە سەرەتای یارییەکە، هەموو یاریزانەکان بە بێ هیچ چەک و بەرگرییەک دەست پێ دەکەن و پێویستە چەک، بەرگری و سامان بدۆزنەوە بۆ مانەوە.<br><br>
+
+  ▣ سیستەمی یارییەکە بریتییە لە تیراندازی پیشکەوتوو، جوڵەی خێرا، و ستراتیژی قووڵ کە پێویستە یاریزانەکان بە زیرەکی بژین.<br><br>
+
+  ▣ هەر یاریزانێک دەتوانێت تاکتیکی خۆی بەکاربهێنێت بۆ مانەوە، وەک شاردنەوە، هێرشکردن، یان دروستکردنی پلانێکی زیرەک بۆ بردنەوە.<br><br>
+
+  ▣ ناوچەی یارییەکە بە هەردەم کەم دەبێتەوە، ئەمەش شەڕەکان قورس تر و خێراتر دەکات.<br><br>
+
+  ▣ ئامانجی سەرەکی: تەنها یەک یاریزان دەتوانێت بمێنێتەوە و ببێت بە براوەی کوردیش رۆیال.<br><br>
+
+  ▣ ئایا تۆ ئامادەیت بۆ ئەو شەڕەی کە تەنها زیرەکان دەتوانن لە ناویدا بمێننەوە؟
+</div>
+  </div>
+
+  <div class="bottom">
+    Coming soon web update
+  </div>
+
+</div>
+
+<script>
+let targetDate = new Date("2026-08-01T00:00:00").getTime();
+
+function update(){
+  let now = new Date().getTime();
+  let diff = targetDate - now;
+
+  if(diff < 0) diff = 0;
+
+  document.getElementById("days").innerText = Math.floor(diff/(1000*60*60*24));
+  document.getElementById("hours").innerText = Math.floor((diff/(1000*60*60))%24);
+  document.getElementById("minutes").innerText = Math.floor((diff/(1000*60))%60);
+  document.getElementById("seconds").innerText = Math.floor((diff/1000)%60);
+  document.getElementById("ms").innerText = diff % 1000;
+}
+
+setInterval(update,50);
+update();
+</script>
+
+</body>
+</html>
